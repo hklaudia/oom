@@ -15,6 +15,8 @@ namespace Task3
         public Doppelzylinder(string fb, int l1, int l2)
         {
             if (fb != "messing" && fb != "nickel") throw new Exception("Falsche Faerbung!");
+            if (l1 < 30 || l1 > 80) throw new Exception("Laenge nicht moeglich!");
+            if (l2 < 30 || l2 > 80) throw new Exception("Laenge nicht moeglich!");
 
             _faerbung = fb;
             _laenge1 = l1;

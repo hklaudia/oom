@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +39,21 @@ namespace Task3
                 Console.Write($"Zylinder {i++}: ");
                 x.Print();
             }
+
+            //Serialization Task 4
+            Console.WriteLine("\nSerialize and deserialize: \n");
+           
+            string s = JsonConvert.SerializeObject(zylinder);
+            string path = @"C:\Technikum\2.Semester\OOM\Teil 2\oom\string.txt";
+            if (!File.Exists(path))
+            {
+                File.WriteAllText(path, s);
+            }
+            string read = File.ReadAllText(path);
+            Console.WriteLine(read);
+
+            var zylinder2 = JsonConvert.DeserializeObject<Zylinder>(read);
+
         }
     }
 }

@@ -1,0 +1,1 @@
+[{"Laenge1":30,"Laenge2":50,"Faerbung":"messing"},{"Laenge1":55,"Laenge2":55,"Faerbung":"nickel"},{"Laenge1":40,"Laenge2":45,"Faerbung":"nickel"},{"Faerbung":"nickel","Laenge1":65,"Laenge2":30,"Knauf":6},{"Faerbung":"messing","Laenge1":40,"Laenge2":40,"Knauf":1}]
