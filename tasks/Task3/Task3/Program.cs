@@ -12,6 +12,7 @@ namespace Task3
     {
         static void Main(string[] args)
         {
+            JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented, TypeNameHandling = TypeNameHandling.Auto };
             int i = 1;
 
             var zylinder = new Zylinder[]
@@ -42,18 +43,20 @@ namespace Task3
 
             //Serialization Task 4
             Console.WriteLine("\nSerialize and deserialize: \n");
+
+            string s = JsonConvert.SerializeObject(zylinder, settings);
            
-            string s = JsonConvert.SerializeObject(zylinder);
-            string path = @"C:\Technikum\2.Semester\OOM\Teil 2\oom\string.txt";
-            if (!File.Exists(path))
+            Console.WriteLine(s);
+
+            Zylinder[] z = JsonConvert.DeserializeObject<Zylinder[]>(s, settings);
+            i = 1;
+            foreach (var x in z)
             {
-                File.WriteAllText(path, s);
+                Console.Write($"Zylinder {i++}: ");
+                x.Print();
             }
-            string read = File.ReadAllText(path);
-            Console.WriteLine(read);
-
-            var zylinder2 = JsonConvert.DeserializeObject<Zylinder>(read);
-
+            
+            
         }
     }
 }

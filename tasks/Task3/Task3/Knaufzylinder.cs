@@ -11,16 +11,16 @@ namespace Task3
         private int _laenge1, _laenge2, _knauf;
         private string _faerbung;
 
-        public Knaufzylinder(string fb, int l1, int l2, int k)
+        public Knaufzylinder(string Faerbung, int Laenge1, int Laenge2, int Knauf)
         {
-            if (fb != "messing" && fb != "nickel") throw new Exception("Falsche Faerbung!");
-            if (l1 < 30 || l1 > 80) throw new Exception("Laenge nicht moeglich!");
-            if (l2 < 30 || l2 > 80) throw new Exception("Laenge nicht moeglich!");
+            if (Faerbung != "messing" && Faerbung != "nickel") throw new Exception("Falsche Faerbung!");
+            if (Laenge1 < 30 || Laenge1 > 80) throw new Exception("Laenge nicht moeglich!");
+            if (Laenge2 < 30 || Laenge2 > 80) throw new Exception("Laenge nicht moeglich!");
 
-            _faerbung = fb;
-            _laenge1 = l1;
-            _laenge2 = l2;
-            _knauf = k;
+            _faerbung = Faerbung;
+            _laenge1 = Laenge1;
+            _laenge2 = Laenge2;
+            _knauf = Knauf;
         }
 
         public string Faerbung
@@ -77,15 +77,15 @@ namespace Task3
             }
         }
 
-        public void LaengeAendern(int l1, int l2)
+        public void LaengeAendern(int Laenge1, int Laenge2)
         {
-            _laenge1 = l1;
-            _laenge2 = l2;
+            _laenge1 = Laenge1;
+            _laenge2 = Laenge2;
         }
 
         public void Print()
         {
-            Console.WriteLine("Knaufzylinder " + Laenge1 + "/" + Laenge2 + "K, Fb: " + Faerbung + ", Knauf K" + Knauf);
+            Console.WriteLine("Knaufzylinder " + Laenge1 + "/" + Laenge2 + "K, Faerbung: " + Faerbung + ", Knauf K" + Knauf);
         }
     }
 }

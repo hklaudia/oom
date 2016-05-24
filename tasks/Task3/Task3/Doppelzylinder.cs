@@ -12,15 +12,15 @@ namespace Task3
         private string _faerbung;
 
         // Constructor
-        public Doppelzylinder(string fb, int l1, int l2)
+        public Doppelzylinder(string Faerbung, int Laenge1, int Laenge2)
         {
-            if (fb != "messing" && fb != "nickel") throw new Exception("Falsche Faerbung!");
-            if (l1 < 30 || l1 > 80) throw new Exception("Laenge nicht moeglich!");
-            if (l2 < 30 || l2 > 80) throw new Exception("Laenge nicht moeglich!");
+            if (Faerbung != "messing" && Faerbung != "nickel") throw new Exception("Falsche Faerbung!");
+            if (Laenge1 < 30 || Laenge1 > 80) throw new Exception("Laenge nicht moeglich!");
+            if (Laenge2 < 30 || Laenge2 > 80) throw new Exception("Laenge nicht moeglich!");
 
-            _faerbung = fb;
-            _laenge1 = l1;
-            _laenge2 = l2;
+            _faerbung = Faerbung;
+            _laenge1 = Laenge1;
+            _laenge2 = Laenge2;
         }
 
         public int Laenge1
@@ -61,15 +61,15 @@ namespace Task3
             }
         }
 
-        public void LaengeAendern(int l1, int l2)
+        public void LaengeAendern(int Laenge1, int Laenge2)
         {
-            _laenge1 = l1;
-            _laenge2 = l2;
+            _laenge1 = Laenge1;
+            _laenge2 = Laenge2;
         }
 
         public void Print()
         {
-            Console.WriteLine("Doppelzylinder " + Laenge1 + "/" + Laenge2 + ", Fb: " + Faerbung);
+            Console.WriteLine("Doppelzylinder " + Laenge1 + "/" + Laenge2 + ", Faerbung: " + Faerbung);
         }
     }
 }
