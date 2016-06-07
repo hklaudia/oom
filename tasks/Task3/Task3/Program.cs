@@ -14,25 +14,18 @@ namespace Task3
         {
             JsonSerializerSettings settings = new JsonSerializerSettings() { Formatting = Formatting.Indented, TypeNameHandling = TypeNameHandling.Auto };
             int i = 1;
-            string path = @"Json.txt";
+            string path = @"C:\Users\Klaudia\Desktop\Json.txt";
             Zylinder[] zylinder;
-            if (File.Exists(path))
-            {
-                string text = File.ReadAllText(path);
-                Console.WriteLine(text);
-                zylinder = JsonConvert.DeserializeObject<Zylinder[]>(text, settings);
-            }
-            else {
 
-                zylinder = new Zylinder[]
-                {
+            zylinder = new Zylinder[]
+            {
                 new Doppelzylinder("messing", 30, 50),
                 new Doppelzylinder("nickel", 35, 35),
                 new Doppelzylinder("nickel", 40, 45),
                 new Knaufzylinder("messing", 65, 30, 6),
                 new Knaufzylinder("messing", 40, 40, 1)
-                };
-            }
+            };
+            
 
             foreach (var x in zylinder)
             {
@@ -51,9 +44,15 @@ namespace Task3
                 x.Print();
             }
 
+            //Serialize
             string s = JsonConvert.SerializeObject(zylinder, settings);
             File.WriteAllText(path, s);
-            
+           
+            //Deserialize
+            string text = File.ReadAllText(path);
+            Console.WriteLine(text);
+            zylinder = JsonConvert.DeserializeObject<Zylinder[]>(text, settings);
+                      
         }
     }
 }
