@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Task3
@@ -52,7 +55,14 @@ namespace Task3
             string text = File.ReadAllText(path);
             Console.WriteLine(text);
             zylinder = JsonConvert.DeserializeObject<Zylinder[]>(text, settings);
-                      
+
+            //Console.WriteLine("Push");
+            //Push.Run(zylinder);
+
+            Console.WriteLine("Tasks");
+            Tasks.Run();
         }
+
+        
     }
 }
